@@ -1,0 +1,278 @@
+/*
+  Terence Nguyen, Dante Sangoi, Daniel Song
+  2/13/2024
+  Style
+  Contains all the styling for the page (that is not in php inline)
+
+  TERENCE DID ALL THE CSS EXCEPT FOR THE ONES STATED
+  I DID NOT DOCUMENT THE LINES THAT ARE SELF-EXPLANATORY
+  OR ONES THAT I HAVE ALREADY COMMENTED ON
+*/
+
+
+/* Terence | 2/13/2024 | everything below (unless stated) is done on the specified date */
+body {
+  width:100%;
+  overflow-x:hidden; /* hides elements that go over the x-axis of the body (100%) */
+  margin:0; /* removes the marginns */
+  font-family: Verdana, sans-serif; /* sets a font */
+  background-color:#577575;
+  color:white;
+}
+@font-face { /* Creates a font using the files from the fonts folder */
+  font-family: 'papyrus'; 
+  src: url('fonts/papyrus.ttf'); 
+}
+@font-face { /* Creates a font using the files from the fonts folder */ 
+  font-family: 'trebuchet'; 
+  src: url('fonts/trebuc.woff'); 
+}
+/* ALL HEADER STUFF */
+#header {
+  width:100%;
+  height:100%;
+  background-color:#93a9a9;
+  overflow:hidden; /* hides all things that overflow */
+}
+/* HEADER TEXT STUFF */
+#header h1 {
+  font-size:200px;
+  animation:text 7s infinite;
+  color:#93a9a9;
+  -webkit-text-stroke: 7px white; /* adds the ability to add text strokes */
+  margin:0 0 -80px; /* moves sangoi closer to space */
+  text-decoration:underline;
+}
+#title {
+  position:absolute;
+  left:5%;
+  top:40%; /* using top and transform to center an element, I dont understand why this works */
+  transform: translateY(-40%);
+  z-index:1; /* Makes this infront of default elements*/
+}
+#top {
+  border-bottom:5px white solid; /* creates double underline on SANGOI */
+}
+#indent { /* align bottom text to top by using indent*/
+  text-indent:190px;
+}
+#quote {
+  position:absolute;
+  display:block; /* allows for use of width on line elements ie. a tags or span */
+  top:70%;
+  left:12%;
+  width:42%;
+}
+#positionIMG {
+  position:relative;
+}
+#headImg {
+  position:absolute;
+  right:0; /* sets the image to right instead of left */
+}
+
+/* LOGIN AND REGISTER BUTTONS */
+#topNav {
+  position:fixed; /* fixed on the page */
+  display:flex; /* an easy way to align stuff */
+  align-items:center; /* aligns center vertically */
+  justify-content:end; /* aligns child elements at the end of the container */
+  top:2%;
+  left:7%;
+  gap:3%;
+  height:8%;
+  width:20%;
+  z-index:100; /* high z-index so it stays on top */
+}
+.btn {
+  border:4px solid white;
+  border-radius:1000px;
+  padding:15px;
+  text-decoration:none;
+  color:white;
+  font-size:20px;
+  transition:background-color 0.3s, color 0.3s, scale 0.3s; /* adds a transition to the selected */
+}
+.btn:hover {
+  background-color:white;
+  color:#6f8080;
+  scale:1.1; /* makes the button bigger on hover  */
+}
+.special {
+  background-color:white;
+  color:#6f8080;
+}
+#convincingWords {
+  font-size:30px;
+  text-align:center;
+  width:50%;
+  position:relative;
+  left:25%;
+}
+#objective {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:5%;
+  flex-direction:column;
+}
+#objective h2 {
+  font-size:50px;
+  border-bottom:5px solid white;
+}
+#objective p {
+  width:50%;
+  font-size:20px
+}
+.subhead {
+  font-size:50px;
+  border-bottom:5px solid white;
+  text-align:center;
+}
+#developers {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  gap:5%;
+}
+.column {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  width:20%;
+}
+.column h3 {
+  font-size:25px;
+}
+.column img {
+  width:100%;
+}
+.column p {
+  font-size:20px;
+}
+#imgContainer {
+  width:100%;
+  height:10%;
+  overflow:hidden;
+}
+/* LOGIN PAGE */
+.formContainer {
+  position:absolute;
+  width:25%;
+  height:60%;
+  top:20%;
+  left:37.5%;
+  background-color:#93a9a9;
+  color:white;
+  outline:5px solid white;
+  overflow:hidden;
+}
+.formContainer .form {
+  width:100%;
+  height:70%;
+  display:flex;
+  justify-content:start;
+  align-items:center;
+  flex-direction:column;
+  row-gap:5%; /* creates a gap in only the rows (but since flex-direction is column, it is actually gap in the columns) */
+}
+.formContainer h2 {
+  font-size:40px;
+  text-align:center;
+}
+.formContainer .inputBox {
+  width:60%;
+  height:10%;
+  display:flex;
+  justify-content:space-between; /* even space between each element */
+  align-items:center;
+}
+.inputBox input {
+  width:90%;
+  height:100%;
+  border-bottom:solid 3px #ffffff;
+  border-top:none;
+  border-left:none;
+  border-right:none;
+  font-size:16px;
+  color:white;
+  background-color:rgba(0,0,0,0); /* transparent background color */
+}
+.inputBox input::placeholder { /* customizes the placeholder */
+  color:white;
+}
+.inputBox i {
+  width:5%;
+}
+.submitBtn {
+  height:15%;
+  width:45%;
+  border-radius:100px; /* rounds the corners */
+  border:5px white solid;
+  background-color:#93a9a9;
+  color:white;
+  font-size:16px;
+  transition:background-color 0.3s, color 0.3s, scale 0.3s;
+}
+.submitBtn:hover {
+  background-color:white;
+  color:#6f8080;
+  scale:1.1;
+}
+.createAcc {
+  display:flex;
+  justify-content:center;
+  width:100%;
+  gap:5%;
+}
+.createAcc a:visited, .createAcc a { /* styles when a site has been visited and a regular link */
+  color:white;
+  text-decoration:none;
+}
+#red { /* styles error messages */
+  position:relative;
+  color:red;
+}
+/* Terence | 2/23/2023 */
+/* code snippets page */
+#top2 {
+  border-bottom:5px white solid;
+  display:block;
+  width:52%;
+  position:relative;
+}
+#indent2 {
+  position:relative;
+  z-index:10;
+}
+.codeContainer {
+  width:100%;
+  overflow-x:hidden;
+  display:flex;
+  align-items:center;
+  flex-direction:column;
+}
+.codeContainer h2 {
+  font-size:40px;
+  text-align:center;
+  width:100%;
+  border-bottom:5px solid white;
+}
+.row {
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:3%;
+  padding:10px;
+}
+.row p {
+  font-size:20px;
+  width:33%;
+}
+.row img {
+  width:33%;
+  border:5px solid white;
+}
